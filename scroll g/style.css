@@ -1,0 +1,575 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Montserrat', sans-serif;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+html{
+    scrollbar-width:none;
+}
+
+/* NAVBAR */
+nav{
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(5,8,22,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#7c3aed;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+nav ul li a::after{
+    content:'';
+    width:0%;
+    height:3px;
+    background:#7c3aed;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.4s;
+    border-radius:20px;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* GLOBAL NI */
+section{
+    padding:130px 10%;
+    min-height:100vh;
+    position:relative;
+}
+
+.title{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:70px;
+    color:#7c3aed;
+}
+
+/* PARA SA GLOW EFFECTS */
+.glow1,
+.glow2{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+.glow1{
+    width:300px;
+    height:300px;
+    background:#7c3aed;
+    top:120px;
+    left:-100px;
+}
+
+.glow2{
+    width:250px;
+    height:250px;
+    background:#06b6d4;
+    bottom:50px;
+    right:-80px;
+}
+
+/* HOME */
+.home{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:120px 10%;
+    position:relative;
+
+    background:
+    linear-gradient(rgba(5,8,22,0.75),rgba(5,8,22,0.88));
+
+    background-size:cover;
+    background-position:center;
+}
+
+/* HOME UG APIL IMAGE */
+.home-content{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    z-index:2;
+}
+
+.home-text{
+    max-width:650px;
+    z-index:2;
+}
+
+.home-text h1{
+    font-size:64px;
+    line-height:1.2;
+    margin-bottom:25px;
+    font-weight:700;
+    color:#7c3aed;
+}
+
+.home-text span{
+    color:white;
+    display:block;
+}
+
+.home-text p{
+    font-size:18px;
+    line-height:2;
+    color:#d1d5db;
+    margin-bottom:35px;
+    max-width:600px;
+}
+
+.home-image img{
+    width:260px;
+    height:360px;
+    object-fit:cover;
+    border-radius:35px;
+    border:5px solid rgba(255,255,255,0.08);
+    box-shadow:0 0 40px rgba(124,58,237,0.35);
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 40px;
+    background:#7c3aed;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(124,58,237,0.6);
+}
+
+/* RESPONSIVE ANG HOME */
+@media(max-width:950px){
+
+.home-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+.home-image img{
+    width:240px;
+    height:330px;
+}
+
+}
+
+/* ABOUT */
+.about-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-card{
+    background:#0f172a;
+    padding:40px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.about-card p{
+    line-height:2;
+    margin-bottom:18px;
+    color:#cbd5e1;
+}
+
+.about-right{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.about-right img{
+    width:390px;
+    border-radius:35px;
+    object-fit:cover;
+    border:5px solid rgba(255,255,255,0.08);
+    box-shadow:0 0 40px rgba(124,58,237,0.35);
+}
+
+.about-icons{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.about-icons a{
+    width:75px;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#0f172a;
+    border-radius:20px;
+    color:white;
+    text-decoration:none;
+    font-size:40px;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.about-icons a:hover{
+    background:#7c3aed;
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(124,58,237,0.6);
+}
+
+.skills{
+    position:relative;
+    margin-top:90px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.skills::before{
+    content:"SKILLS";
+    position:absolute;
+    top:-65px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:5px;
+    color:#7c3aed;
+}
+
+.skill{
+    background:linear-gradient(135deg,#7c3aed,#4f46e5);
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.skill:hover{
+    transform:scale(1.05);
+}
+
+/* LONG DESIGN UG BOX */
+.long-design{
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.design-box{
+    background:#0f172a;
+    border-radius:25px;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.design-box:hover{
+    transform:translateY(-10px);
+}
+
+.design-box img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.design-box div{
+    padding:25px;
+}
+
+.design-box h2{
+    margin-bottom:15px;
+    color:#7c3aed;
+}
+
+/* EDUCATION */
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    width:4px;
+    height:100%;
+    background:#7c3aed;
+    transform:translateX(-50%);
+}
+
+.timeline-box{
+    width:45%;
+    background:#0f172a;
+    padding:30px;
+    border-radius:25px;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.timeline-box h2{
+    color:#7c3aed;
+    margin-bottom:10px;
+}
+
+.left{
+    left:0;
+}
+
+.right{
+    left:55%;
+}
+
+.timeline-box::before{
+    content:'';
+    width:20px;
+    height:20px;
+    background:#7c3aed;
+    border-radius:50%;
+    position:absolute;
+    top:40px;
+}
+
+.left::before{
+    right:-60px;
+}
+
+.right::before{
+    left:-60px;
+}
+
+.education-bottom{
+    margin-top:80px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    padding:60px;
+    border-radius:30px;
+    text-align:center;
+    line-height:2;
+}
+
+/* GOALS */
+.goals-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.goal-card{
+    background:#0f172a;
+    padding:35px;
+    border-radius:25px;
+    border-top:5px solid #7c3aed;
+    transition:0.4s;
+}
+
+.goal-card:hover{
+    transform:translateY(-10px);
+}
+
+.center-goal{
+    grid-column:1 / -1;
+    max-width:250px;
+    width:100%;
+    justify-self:center;
+}
+
+/* QUOTE WITH PIC */
+.quote-section{
+    margin-top:90px;
+    text-align:center;
+    padding:80px 40px;
+    border-radius:30px;
+    background:
+    linear-gradient(rgba(5,8,22,0.7),rgba(5,8,22,0.8)),
+    url('image/2.avif');
+    background-size:cover;
+    background-position:center;
+}
+
+.quote-section h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.quote-section p{
+    max-width:700px;
+    margin:auto;
+    line-height:2;
+}
+
+/* CONTACT */
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info,
+.contact-form{
+    background:#0f172a;
+    padding:40px;
+    border-radius:30px;
+}
+
+.contact-info h2{
+    margin-bottom:20px;
+    color:#7c3aed;
+}
+
+.contact-info p{
+    line-height:2;
+    color:#d1d5db;
+}
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:18px;
+    background:#111c33;
+    border:none;
+    border-radius:15px;
+    color:white;
+    outline:none;
+}
+
+.contact-form button{
+    padding:16px;
+    border:none;
+    border-radius:40px;
+    background:#7c3aed;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.contact-form button:hover{
+    box-shadow:0 0 25px rgba(124,58,237,0.5);
+}
+
+/* RESPONSIVE SA CONTACT */
+@media(max-width:950px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.home-text h1{
+    font-size:55px;
+}
+
+.about-wrapper,
+.contact-wrapper{
+    grid-template-columns:1fr;
+}
+
+.about-right{
+    flex-direction:column;
+}
+
+.about-icons{
+    flex-direction:row;
+}
+
+.about-right img{
+    width:100%;
+    max-width:330px;
+}
+
+.timeline::before{
+    left:20px;
+}
+
+.timeline-box{
+    width:100%;
+    left:0;
+    padding-left:60px;
+}
+
+.timeline-box::before{
+    left:10px;
+}
+
+.skills{
+    grid-template-columns:1fr;
+}
+
+.title{
+    font-size:42px;
+}
+
+.quote-section h1{
+    font-size:35px;
+}
+
+.home-text h1{
+    font-size:48px;
+}
+
+section{
+    padding:140px 7%;
+}
+}
